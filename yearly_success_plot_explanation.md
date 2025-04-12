@@ -1,0 +1,3 @@
+# Yearly Success Rate Plot Explanation
+
+This line chart displays SpaceX's landing success rate evolution from 2010 to 2022, showing a clear upward trend from around 40% in early years to over 90% by 2022. The plot combines a primary line chart of success rates with a secondary bar chart showing the number of launches per year, illustrating how SpaceX increased both launch frequency and reliability over time. Key milestones are annotated, including the first successful land landing (2015), first successful drone ship landing (2016), and Falcon Heavy debut (2018). The visualization demonstrates SpaceX's learning curve in reusable rocket technology, with success rates stabilizing above 85% after 2018 despite a significant increase in launch frequency. 

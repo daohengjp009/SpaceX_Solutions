@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b67ebea16cae65ef6dbe3ea181c203dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+</head>
+<body>
+    
+    
+<h3 align="center" style="font-size:16px"><b>Kennedy Space Center Launch Complex 39A Proximity Analysis</b></h3>
+    
+<div style="position: fixed; 
+            bottom: 50px; right: 50px; 
+            border:2px solid grey; z-index:9999; font-size:14px;
+            background-color:white; padding: 10px;
+            border-radius: 5px;">
+    <p><i class="fa fa-rocket fa-1x" style="color:blue"></i> Launch Site</p>
+    <p><i class="fa fa-water fa-1x" style="color:blue"></i> Coastline</p>
+    <p><i class="fa fa-road fa-1x" style="color:gray"></i> Highway</p>
+    <p><i class="fa fa-building fa-1x" style="color:orange"></i> Facility</p>
+    <p><i class="fa fa-crosshairs fa-1x" style="color:green"></i> Landing Site</p>
+</div>
+    
+            <div class="folium-map" id="map_b67ebea16cae65ef6dbe3ea181c203dd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b67ebea16cae65ef6dbe3ea181c203dd = L.map(
+                "map_b67ebea16cae65ef6dbe3ea181c203dd",
+                {
+                    center: [28.608, -80.6043],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_892e0cb697a2787d598a36f9d9e71efc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_892e0cb697a2787d598a36f9d9e71efc.addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var marker_715ae4fa1ae669e86a29876177340702 = L.marker(
+                [28.608, -80.6043],
+                {
+}
+            ).addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var icon_04722c5cd8c6ac4983e7908718002bf1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "rocket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb10fc2bb4a474c4d0035a8d29e6a27f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7970c5e4bc4add3f344a55e0dc40a823 = $(`<div id="html_7970c5e4bc4add3f344a55e0dc40a823" style="width: 100.0%; height: 100.0%;"><b>Kennedy Space Center Launch Complex 39A</b><br>Site code: KSC LC-39A</div>`)[0];
+                popup_cb10fc2bb4a474c4d0035a8d29e6a27f.setContent(html_7970c5e4bc4add3f344a55e0dc40a823);
+            
+        
+
+        marker_715ae4fa1ae669e86a29876177340702.bindPopup(popup_cb10fc2bb4a474c4d0035a8d29e6a27f)
+        ;
+
+        
+    
+    
+                marker_715ae4fa1ae669e86a29876177340702.setIcon(icon_04722c5cd8c6ac4983e7908718002bf1);
+            
+    
+            var feature_group_c8e35858ea07b7dc797c1ab00a274033 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_c00a4fea0666093d07a693538ef23ee0 = L.marker(
+                [28.607, -80.5772],
+                {
+}
+            ).addTo(feature_group_c8e35858ea07b7dc797c1ab00a274033);
+        
+    
+            var icon_7145de1d853dd0b5cf8c12c7c3c44f6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "water",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b9bec8cb8712bf2839b61e007bf5796 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6ad47a189a146ca0d38438e3615902a = $(`<div id="html_a6ad47a189a146ca0d38438e3615902a" style="width: 100.0%; height: 100.0%;"><b>Atlantic Ocean Coastline</b><br>Type: Coastline<br>Distance: 2.65 km (1.65 mi)</div>`)[0];
+                popup_2b9bec8cb8712bf2839b61e007bf5796.setContent(html_a6ad47a189a146ca0d38438e3615902a);
+            
+        
+
+        marker_c00a4fea0666093d07a693538ef23ee0.bindPopup(popup_2b9bec8cb8712bf2839b61e007bf5796)
+        ;
+
+        
+    
+    
+                marker_c00a4fea0666093d07a693538ef23ee0.setIcon(icon_7145de1d853dd0b5cf8c12c7c3c44f6f);
+            
+    
+            var poly_line_ff90da0eceeac5ebfea65b04c963b52e = L.polyline(
+                [[28.608, -80.6043], [28.607, -80.5772]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_c8e35858ea07b7dc797c1ab00a274033);
+        
+    
+        var popup_f7f9d980cf2b8a2c73d5fc15af9d1594 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_692cffc78fc140c39388ba3607d89e23 = $(`<div id="html_692cffc78fc140c39388ba3607d89e23" style="width: 100.0%; height: 100.0%;">Distance: 2.65 km (1.65 mi)</div>`)[0];
+                popup_f7f9d980cf2b8a2c73d5fc15af9d1594.setContent(html_692cffc78fc140c39388ba3607d89e23);
+            
+        
+
+        poly_line_ff90da0eceeac5ebfea65b04c963b52e.bindPopup(popup_f7f9d980cf2b8a2c73d5fc15af9d1594)
+        ;
+
+        
+    
+    
+            feature_group_c8e35858ea07b7dc797c1ab00a274033.addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var feature_group_054f99bfceede1171deb8fbad5912e1a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_5246bd0c8c3a0a8b5775b60b161c9d71 = L.marker(
+                [28.5807, -80.6514],
+                {
+}
+            ).addTo(feature_group_054f99bfceede1171deb8fbad5912e1a);
+        
+    
+            var icon_67b74cc6ddc8f445c2220b83cfee2d56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "road",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2ca732b79ec57edff6071f1efd732525 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ea5efcd05be78ee6b4d1d1aed72b376 = $(`<div id="html_2ea5efcd05be78ee6b4d1d1aed72b376" style="width: 100.0%; height: 100.0%;"><b>NASA Parkway</b><br>Type: Highway<br>Distance: 5.51 km (3.42 mi)</div>`)[0];
+                popup_2ca732b79ec57edff6071f1efd732525.setContent(html_2ea5efcd05be78ee6b4d1d1aed72b376);
+            
+        
+
+        marker_5246bd0c8c3a0a8b5775b60b161c9d71.bindPopup(popup_2ca732b79ec57edff6071f1efd732525)
+        ;
+
+        
+    
+    
+                marker_5246bd0c8c3a0a8b5775b60b161c9d71.setIcon(icon_67b74cc6ddc8f445c2220b83cfee2d56);
+            
+    
+            var poly_line_de5238e5d7cac64d85ef0799fa5a23d5 = L.polyline(
+                [[28.608, -80.6043], [28.5807, -80.6514]],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gray", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_054f99bfceede1171deb8fbad5912e1a);
+        
+    
+        var popup_2a06f5e850f5a614623e5e565b65e68a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_534c3830e6357bc48fc868298d7e0b3b = $(`<div id="html_534c3830e6357bc48fc868298d7e0b3b" style="width: 100.0%; height: 100.0%;">Distance: 5.51 km (3.42 mi)</div>`)[0];
+                popup_2a06f5e850f5a614623e5e565b65e68a.setContent(html_534c3830e6357bc48fc868298d7e0b3b);
+            
+        
+
+        poly_line_de5238e5d7cac64d85ef0799fa5a23d5.bindPopup(popup_2a06f5e850f5a614623e5e565b65e68a)
+        ;
+
+        
+    
+    
+            feature_group_054f99bfceede1171deb8fbad5912e1a.addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var feature_group_34c204a5f3222550bf09a3b7a575b6ff = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a37158271358a6b0fd1ddd4ba9e9d97e = L.marker(
+                [28.5234, -80.682],
+                {
+}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+            var icon_f3fcc16d5d5fcf07bde4389585686fee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_104229c7617ef8a0b53dda86c7c9969c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94fdccca9d3681a465c6aa33efbd3d79 = $(`<div id="html_94fdccca9d3681a465c6aa33efbd3d79" style="width: 100.0%; height: 100.0%;"><b>Kennedy Space Center Visitor Complex</b><br>Type: Facility<br>Distance: 12.09 km (7.51 mi)</div>`)[0];
+                popup_104229c7617ef8a0b53dda86c7c9969c.setContent(html_94fdccca9d3681a465c6aa33efbd3d79);
+            
+        
+
+        marker_a37158271358a6b0fd1ddd4ba9e9d97e.bindPopup(popup_104229c7617ef8a0b53dda86c7c9969c)
+        ;
+
+        
+    
+    
+                marker_a37158271358a6b0fd1ddd4ba9e9d97e.setIcon(icon_f3fcc16d5d5fcf07bde4389585686fee);
+            
+    
+            var poly_line_7a65bf664ff67900b61a01dcc27145f5 = L.polyline(
+                [[28.608, -80.6043], [28.5234, -80.682]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+        var popup_2bdb885e9b341a45e7699cd4942b5cce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e6c6425a083613331d83eebc86db38db = $(`<div id="html_e6c6425a083613331d83eebc86db38db" style="width: 100.0%; height: 100.0%;">Distance: 12.09 km (7.51 mi)</div>`)[0];
+                popup_2bdb885e9b341a45e7699cd4942b5cce.setContent(html_e6c6425a083613331d83eebc86db38db);
+            
+        
+
+        poly_line_7a65bf664ff67900b61a01dcc27145f5.bindPopup(popup_2bdb885e9b341a45e7699cd4942b5cce)
+        ;
+
+        
+    
+    
+            var marker_12fbefe96970a36692308fc94fcc7837 = L.marker(
+                [28.5858, -80.6508],
+                {
+}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+            var icon_f0a2ace712606a7dcd5af4a44dc8e731 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a00a32a3ce1a821676e7a8f6ab006a6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_326f968a12de71bf0018c360e05bd047 = $(`<div id="html_326f968a12de71bf0018c360e05bd047" style="width: 100.0%; height: 100.0%;"><b>Vehicle Assembly Building</b><br>Type: Facility<br>Distance: 5.17 km (3.21 mi)</div>`)[0];
+                popup_a00a32a3ce1a821676e7a8f6ab006a6e.setContent(html_326f968a12de71bf0018c360e05bd047);
+            
+        
+
+        marker_12fbefe96970a36692308fc94fcc7837.bindPopup(popup_a00a32a3ce1a821676e7a8f6ab006a6e)
+        ;
+
+        
+    
+    
+                marker_12fbefe96970a36692308fc94fcc7837.setIcon(icon_f0a2ace712606a7dcd5af4a44dc8e731);
+            
+    
+            var poly_line_98fe473704c5fc52aba6f526313350dc = L.polyline(
+                [[28.608, -80.6043], [28.5858, -80.6508]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+        var popup_44d783a87c677080b7177791966173cc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_111d5a27fee11f2d6893dcff588472c8 = $(`<div id="html_111d5a27fee11f2d6893dcff588472c8" style="width: 100.0%; height: 100.0%;">Distance: 5.17 km (3.21 mi)</div>`)[0];
+                popup_44d783a87c677080b7177791966173cc.setContent(html_111d5a27fee11f2d6893dcff588472c8);
+            
+        
+
+        poly_line_98fe473704c5fc52aba6f526313350dc.bindPopup(popup_44d783a87c677080b7177791966173cc)
+        ;
+
+        
+    
+    
+            var marker_02413bac11d3d15dd9084b74093a144c = L.marker(
+                [28.5817, -80.6483],
+                {
+}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+            var icon_ae298ffe4788736b66d280cc7839c387 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b079a00acf5857f62bde5eb47e80a096 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d97e14ed86e1032fc1cbca905de3ea6 = $(`<div id="html_2d97e14ed86e1032fc1cbca905de3ea6" style="width: 100.0%; height: 100.0%;"><b>Launch Control Center</b><br>Type: Facility<br>Distance: 5.20 km (3.23 mi)</div>`)[0];
+                popup_b079a00acf5857f62bde5eb47e80a096.setContent(html_2d97e14ed86e1032fc1cbca905de3ea6);
+            
+        
+
+        marker_02413bac11d3d15dd9084b74093a144c.bindPopup(popup_b079a00acf5857f62bde5eb47e80a096)
+        ;
+
+        
+    
+    
+                marker_02413bac11d3d15dd9084b74093a144c.setIcon(icon_ae298ffe4788736b66d280cc7839c387);
+            
+    
+            var poly_line_0afecf82a774be3f2fcf52c2e4f680ed = L.polyline(
+                [[28.608, -80.6043], [28.5817, -80.6483]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_34c204a5f3222550bf09a3b7a575b6ff);
+        
+    
+        var popup_72a7260870dcaaabae235624ec5d430c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d07b7cc1967b01a79de061832f6d09b = $(`<div id="html_3d07b7cc1967b01a79de061832f6d09b" style="width: 100.0%; height: 100.0%;">Distance: 5.20 km (3.23 mi)</div>`)[0];
+                popup_72a7260870dcaaabae235624ec5d430c.setContent(html_3d07b7cc1967b01a79de061832f6d09b);
+            
+        
+
+        poly_line_0afecf82a774be3f2fcf52c2e4f680ed.bindPopup(popup_72a7260870dcaaabae235624ec5d430c)
+        ;
+
+        
+    
+    
+            feature_group_34c204a5f3222550bf09a3b7a575b6ff.addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var feature_group_f63ff5af9a329edf6f17c372e2bf45f5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_19c55d25e5ce9b26b940d3d976fee7ef = L.marker(
+                [28.4857, -80.5431],
+                {
+}
+            ).addTo(feature_group_f63ff5af9a329edf6f17c372e2bf45f5);
+        
+    
+            var icon_b6abd34bb92e616a20ee64f502b01328 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "crosshairs",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_354d48c2b86d450afdf892a7eb67da31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2306e5b38a9096d785a1c128a53eeb6 = $(`<div id="html_a2306e5b38a9096d785a1c128a53eeb6" style="width: 100.0%; height: 100.0%;"><b>SpaceX Landing Zone 1</b><br>Type: Landing Site<br>Distance: 14.85 km (9.23 mi)</div>`)[0];
+                popup_354d48c2b86d450afdf892a7eb67da31.setContent(html_a2306e5b38a9096d785a1c128a53eeb6);
+            
+        
+
+        marker_19c55d25e5ce9b26b940d3d976fee7ef.bindPopup(popup_354d48c2b86d450afdf892a7eb67da31)
+        ;
+
+        
+    
+    
+                marker_19c55d25e5ce9b26b940d3d976fee7ef.setIcon(icon_b6abd34bb92e616a20ee64f502b01328);
+            
+    
+            var poly_line_de6396512cbdd472b05cb25dc25e7fec = L.polyline(
+                [[28.608, -80.6043], [28.4857, -80.5431]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(feature_group_f63ff5af9a329edf6f17c372e2bf45f5);
+        
+    
+        var popup_26e0dfb837b30f9fe0f64268b96a3499 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_09be69db8b2311ad197aeeace37c7bee = $(`<div id="html_09be69db8b2311ad197aeeace37c7bee" style="width: 100.0%; height: 100.0%;">Distance: 14.85 km (9.23 mi)</div>`)[0];
+                popup_26e0dfb837b30f9fe0f64268b96a3499.setContent(html_09be69db8b2311ad197aeeace37c7bee);
+            
+        
+
+        poly_line_de6396512cbdd472b05cb25dc25e7fec.bindPopup(popup_26e0dfb837b30f9fe0f64268b96a3499)
+        ;
+
+        
+    
+    
+            feature_group_f63ff5af9a329edf6f17c372e2bf45f5.addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+        
+    
+            var measure_control_6f1db9207efb488fb5256f68dbbf68df = new L.Control.Measure(
+                {
+  "position": "topright",
+  "primaryLengthUnit": "meters",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_b67ebea16cae65ef6dbe3ea181c203dd.addControl(measure_control_6f1db9207efb488fb5256f68dbbf68df);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+    
+            var layer_control_fb7ee04eb8522467345666ac05b25d73_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_892e0cb697a2787d598a36f9d9e71efc,
+                },
+                overlays :  {
+                    "Coastline" : feature_group_c8e35858ea07b7dc797c1ab00a274033,
+                    "Highways" : feature_group_054f99bfceede1171deb8fbad5912e1a,
+                    "Facilities" : feature_group_34c204a5f3222550bf09a3b7a575b6ff,
+                    "Landing Sites" : feature_group_f63ff5af9a329edf6f17c372e2bf45f5,
+                },
+            };
+            let layer_control_fb7ee04eb8522467345666ac05b25d73 = L.control.layers(
+                layer_control_fb7ee04eb8522467345666ac05b25d73_layers.base_layers,
+                layer_control_fb7ee04eb8522467345666ac05b25d73_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_b67ebea16cae65ef6dbe3ea181c203dd);
+
+        
+</script>
+</html>

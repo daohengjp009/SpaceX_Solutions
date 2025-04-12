@@ -1,0 +1,3 @@
+# SpaceX ML Project - Brief Introduction
+
+The SpaceX ML Project aims to predict Falcon 9 first stage landing success using machine learning. SpaceX revolutionized space travel with reusable rockets, where successful landings can reduce launch costs by ~30%. This project analyzes historical launch data, including launch sites, payload specifications, and weather conditions, to build predictive models that help optimize landing success rates. The best-performing model (SVM) achieved 85% accuracy in predicting landing outcomes, providing valuable insights for mission planning and cost optimization. 

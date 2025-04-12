@@ -1,0 +1,3 @@
+# Data Processing
+
+The collected data underwent comprehensive preprocessing including cleaning missing values, removing duplicates, and standardizing formats. Feature engineering was performed to create meaningful variables from raw data, such as calculating payload mass ratios and normalizing weather conditions. The dataset was then split into training (80%) and testing (20%) sets, with all features standardized using StandardScaler to ensure consistent scaling across variables for machine learning model training. 

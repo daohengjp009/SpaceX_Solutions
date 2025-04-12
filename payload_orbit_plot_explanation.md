@@ -1,0 +1,3 @@
+# Payload Mass vs. Orbit Type Plot Explanation
+
+This scatter plot visualizes the relationship between payload mass and orbit type for SpaceX missions, with blue-circled markers indicating successful landings and red X markers showing failures. The plot reveals distinct payload mass ranges for different orbit types, with GEO and GTO missions carrying the heaviest payloads (5,000-14,000 kg), while SSO and Polar orbits typically carry lighter payloads (1,000-5,000 kg). The visualization clearly demonstrates that heavier payloads are associated with lower landing success rates across all orbit types, with GEO missions showing the most challenging combination of heavy payloads and complex orbital parameters. 

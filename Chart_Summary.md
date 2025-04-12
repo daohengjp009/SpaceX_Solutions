@@ -1,0 +1,3 @@
+# Chart Analysis Summary
+
+We created several key visualizations to analyze the SpaceX launch data: a payload mass vs. landing success scatter plot to identify the relationship between payload weight and landing outcomes, success rate bar charts for different launch sites and orbit types to understand location and mission-specific patterns, a confusion matrix for the SVM model to visualize prediction accuracy, and a learning curve to assess model performance and potential overfitting. These charts were chosen to provide clear insights into the factors affecting landing success and to validate the machine learning model's performance through different visualization perspectives. 

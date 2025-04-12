@@ -1,0 +1,3 @@
+# Data Collection Process
+
+The project collected data from multiple sources including the SpaceX API, which provided detailed launch records and mission parameters. Additional data was gathered from public launch records, weather databases, and satellite tracking information. This comprehensive dataset included launch site characteristics, payload specifications, orbit parameters, weather conditions, and landing site details, forming a robust foundation for the machine learning analysis. 

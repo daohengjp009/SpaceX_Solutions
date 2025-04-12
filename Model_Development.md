@@ -1,0 +1,3 @@
+# Model Development and Evaluation
+
+Four classification models were implemented: Logistic Regression, Support Vector Machines (SVM), Decision Trees, and K-Nearest Neighbors (KNN). Each model was tuned using GridSearchCV with 10-fold cross-validation to find optimal hyperparameters. The SVM model with RBF kernel performed best, achieving 85% accuracy on the test set. Model performance was evaluated using accuracy, precision (83%), recall (86%), and confusion matrices, with the SVM model showing balanced performance across both landing success and failure predictions. 

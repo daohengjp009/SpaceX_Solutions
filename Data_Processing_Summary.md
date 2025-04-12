@@ -1,0 +1,3 @@
+# Data Processing and Wrangling Summary
+
+The collected data underwent comprehensive preprocessing starting with cleaning missing values and removing duplicates. Feature engineering transformed raw data into meaningful variables, including payload mass ratios and normalized weather conditions. Categorical variables were encoded using one-hot encoding, while numerical features were standardized using StandardScaler. The dataset was split into training (80%) and testing (20%) sets, with careful handling of class imbalance through stratified sampling. Data validation ensured consistency across all features, and final transformations were applied to optimize the dataset for machine learning model training. 

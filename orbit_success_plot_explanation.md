@@ -1,0 +1,3 @@
+# Orbit Type Success Rate Plot Explanation
+
+This bar chart compares landing success rates across different orbit types, from Low Earth Orbit (LEO) to Geostationary Orbit (GEO). The visualization shows that LEO and ISS missions have the highest success rates (95% and 90% respectively), while higher orbits like GEO and HEO show lower success rates (55-60%). This pattern suggests that landing success is inversely related to orbit altitude and complexity, with simpler, lower-altitude orbits being more conducive to successful first-stage landings. The data is sorted by success rate to highlight these performance differences clearly. 

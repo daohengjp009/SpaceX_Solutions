@@ -1,0 +1,3 @@
+# Payload Mass vs Launch Site Plot Explanation
+
+This scatter plot visualizes the relationship between payload mass and landing success across three SpaceX launch sites. The plot shows payload masses ranging from 1,000 to 15,000 kg, with blue circles representing successful landings and red X's indicating failures. The visualization reveals that higher payload masses generally correlate with lower landing success rates, with KSC LC-39A showing the best performance for heavy payloads. This pattern suggests that payload mass is a significant factor in landing success, and certain launch sites are better equipped to handle heavier payloads. 

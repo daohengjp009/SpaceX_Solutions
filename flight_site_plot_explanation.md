@@ -1,0 +1,3 @@
+# Flight Number vs Launch Site Plot Explanation
+
+This scatter plot visualizes SpaceX launch data across three launch sites (KSC LC-39A, CCAFS SLC-40, VAFB SLC-4E) over 100 flights. Blue circles represent successful landings, while red X's indicate failures. The plot shows an increasing trend in landing success rates over time (higher flight numbers), with KSC LC-39A demonstrating the highest success rate. The visualization helps identify patterns in launch site performance and the evolution of landing success as SpaceX gained more experience with reusable rocket technology. 

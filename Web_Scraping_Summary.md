@@ -1,0 +1,3 @@
+# Web Scraping Summary
+
+The web scraping process targeted SpaceX's website, focusing on launch history, mission details, and landing records. Using BeautifulSoup and Requests libraries, we extracted launch dates, mission parameters, payload specifications, and landing outcomes. The process involved navigating through paginated pages, handling dynamic content with Selenium when needed, and implementing robust error handling. Extracted data underwent cleaning, standardization, and validation before being stored in a structured format using pandas, ensuring data quality and consistency for subsequent analysis. 

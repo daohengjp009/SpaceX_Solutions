@@ -1,0 +1,3 @@
+# Flight Number vs. Orbit Type Plot Explanation
+
+This scatter plot illustrates the relationship between flight numbers and orbit types for SpaceX missions, with blue-circled markers indicating successful landings and red X markers showing failures. The plot reveals how SpaceX's mission portfolio evolved over time, starting with mainly LEO, GTO, and ISS missions in early flights, then expanding to include Polar and SSO orbits, and finally incorporating more complex orbits like MEO, HEO, and GEO in later missions. The visualization also demonstrates improving success rates across all orbit types as flight numbers increase, reflecting SpaceX's growing expertise in landing operations regardless of mission complexity. 

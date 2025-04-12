@@ -1,0 +1,3 @@
+# REST API Data Collection Summary
+
+The data collection process utilized SpaceX's public REST API endpoints to gather comprehensive launch data. We accessed the launches, payloads, and cores endpoints to retrieve mission parameters, payload specifications, and landing outcomes. The API provided structured JSON responses containing launch dates, site information, payload mass, orbit types, and core reuse statistics. Data was collected using Python's requests library, with proper error handling and rate limiting considerations, then transformed into a structured format using pandas for subsequent analysis and model training. 
